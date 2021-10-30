@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --font-sizeh1: 24px;
+  --link-color: black;
+  --gray-color: hsl(240, 9%, 89%);
+  --black-color: hsl(240, 6%, 13%);
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+
+  /* não funciona:
+  -webkit-font-smoothing: antialised;
+  */
+}
+
+/*
+main {
+  background-image: url(imagens/Mobile.svg);
+  width: 375px;
+  height: 812px;
+}
+*/
+
+main {
+  background: url(imagens/Mobile.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
+}
+
+.container {
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+  color: var(--gray-color);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+
+  position: relative;
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+  z-index: 1;
+}
+
+/*procura a imagem que fica no primeiro nível (foto pessoal)*/
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  /*para se adaptar a width e height e evitar que a imagem perca as dimensões certas usa-se:*/
+  object-fit: cover;
+  /*
+  https://bennettfeely.com/clippy/
+  por causa do clip-path as imagens voltam para o mesmo nível. Por isso usa-se z-index
+  */
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.nickname p {
+  margin-top: 0.25rem;
+}
+
+.nickname p a {
+  color: var(--gray-color);
+  text-decoration: none;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.paragrafo {
+  margin-top: 2rem;
+}
+
+.lista {
+  margin-top: 4rem;
+}
+
+.lista ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  /*
+  flex permite que possa usar gap e justify-content
+  */
+  gap: 0.5rem;
+  /*
+  para alinhar no eixo x: 
+  */
+  justify-content: center;
+}
